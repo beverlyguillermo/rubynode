@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:3.9
 
 # skip installing gem documentation
 RUN mkdir -p /usr/local/etc \
@@ -30,13 +30,13 @@ RUN set -ex \
 		glib-dev \
 		libc-dev \
 		libffi-dev \
-		libressl \
-		libressl-dev \
 		libxml2-dev \
 		libxslt-dev \
 		linux-headers \
 		make \
 		ncurses-dev \
+		openssl \
+		openssl-dev \
 		procps \
 		readline-dev \
 		ruby \
@@ -117,7 +117,7 @@ RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
 # (BUNDLE_PATH = GEM_HOME, no need to mkdir/chown both)
 
 
-ENV NODE_VERSION 11.7.0
+ENV NODE_VERSION 11.10.0
 
 RUN addgroup -g 1000 node \
     && adduser -u 1000 -G node -s /bin/sh -D node \
