@@ -1,4 +1,4 @@
-FROM node:11-alpine
+FROM node:13-alpine
 
 # skip installing gem documentation
 RUN mkdir -p /usr/local/etc \
